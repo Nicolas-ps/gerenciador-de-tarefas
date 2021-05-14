@@ -1,4 +1,5 @@
 body {
-  background-color: purple;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(25deg, #11062d, #48112e, #7a162d, #af1a2b);
 }
-/*# sourceMappingURL=index.css.map */
