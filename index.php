@@ -9,6 +9,8 @@
     <title>Hora!</title>
 </head>
 <body>
-    <h1>Está na hora!</h1>
+    <h1>Está na hora!</h1> 
+    <h1><a href="src/www/pages/home.php">Home</a></h1>  
+    <h1><a href="src/www/pages/cadastro.php">Cadastro</a></h1>
 </body>
 </html>
