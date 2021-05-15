@@ -12,13 +12,18 @@
     <div class="containerPrincipal">
 
         <div class="containerApresentacao">
-            <div class="apresentacao">
-                <div class="titulo">
-                    Seja Bem vindo ao Hora!
-                </div>
-                <div class="textos">
-                    <div class="textoUm">
-                        O Hora! é uma plataforma de gerenciamento de tarefas online simples e dinâmica. Aqui você faz seu controle de tarefas e pendências sem complicacões. Com alguns cliques, uma nota de texto e <i>voilà</i>, a tarefa foi adicionada à sua lista!
+            <div class="subcontainerApresentacao">
+                <div class="apresentacao">
+                    <div class="titulo">
+                        Seja bem vindo ao Hora!
+                    </div>
+                    <div class="textos">
+                        <div class="texto">
+                            O Hora! é uma plataforma de gerenciamento de tarefas online simples e dinâmica. Aqui você faz seu controle de tarefas e pendências sem complicacões. Com alguns cliques, uma nota de texto e <i>voilà</i>, a tarefa foi adicionada à sua lista!
+                        </div>
+                        <div class="texto">
+                            O Hora! é uma plataforma de gerenciamento de tarefas online simples e dinâmica. Aqui você faz seu controle de tarefas e pendências sem complicacões. Com alguns cliques, uma nota de texto e <i>voilà</i>, a tarefa foi adicionada à sua lista!
+                        </div>
                     </div>
                 </div>
             </div>
@@ -27,14 +32,14 @@
         <div class="containerLogin">
             <div class="containerLogo">
                     <div class="logo">
-                        <img src="public/img/logo-hora-removebg.png" alt="Logo do Hora!" width="150px" height="100px">
+                        <img src="public/img/logo-hora-removebg.png" alt="Logo do Hora!">
                     </div>
                     <div class="logomarca">
-                        <img src="public/img/logo-texto-ssimbol-removebg.png" width="150px" height="100px">
+                        <img src="public/img/logo-texto-ssimbol-removebg.png">
                     </div>
             </div>
             <div class="containerFormulario">
-                <form>
+                <form method="POST" >
 
                     <div class="inputs">         
                         <input type="email" placeholder="Digite seu email">
@@ -44,7 +49,9 @@
 
                     <div class="botao">
                         <button type="submit">Entrar</button>
-                        <span>Não tem uma conta? <a href="src/www/pages/cadastro.php">Cadastre-se</a> </span>
+                        <div class="span">
+                            <span>Não tem uma conta? <a href="src/www/pages/cadastro.php">Cadastre-se</a> </span>
+                        </div>  
                     </div>
 
 
