@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../styles/css/global.css">
     <link rel="stylesheet" type="text/css" href="../styles/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../styles/css/cadastro.css">
     <title>A Hora!</title>
 </head>
 <body>
@@ -39,21 +40,22 @@
             </div>
     </div>
     <div class="containerFormulario">
-        <form method="POST" >
+        <form method="post" action="../../app/cadastrando.php">
 
-            <div class="inputs">         
-                <input type="email" placeholder="Digite seu email">
-                <input type="password" placeholder="Digite sua senha">
+            <div class="inputs">        
+                <input type="text" placeholder="Digite seu nome" name="nome">
+                <input type="email" placeholder="Digite seu email" name="email">
+                <input type="password" placeholder="Digite sua senha" name="senha">
+                <input type="password" placeholder="Repita sua senha" name="senhaConfirmada">
                 <span><a href="#">Esqueceu sua senha?</a></span>
             </div>
 
             <div class="botao">
-                <button type="submit">Entrar</button>
+                <button type="submit">Cadastrar</button>
                 <div class="span">
-                    <span>Não tem uma conta? <a href="src/www/pages/cadastro.php">Cadastre-se</a> </span>
+                    <span>Já tem uma conta? <a href="../../../index.php">Faça login</a> </span>
                 </div>  
             </div>
-
 
         </form>
     </div>
