@@ -1,0 +1,169 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url("../../../public/fonts/Roboto/Roboto-Light.ttf"); }
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../../../public/fonts/Montserrat/Montserrat-SemiBold.ttf"); }
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(25deg, #11062d, #48112e, #7a162d, #af1a2b);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.containerPrincipal {
+  width: 92%;
+  height: 42rem;
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.25); }
+
+.containerLateral {
+  width: 30%;
+  height: 100%;
+  border-right: 1px solid rgba(255, 255, 255, 0.5); }
+  .containerLateral .subcontainerLateral {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    .containerLateral .subcontainerLateral .containerLogo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .containerLateral .subcontainerLateral .containerLogo .logomarca {
+        height: 150px;
+        width: 200px; }
+      .containerLateral .subcontainerLateral .containerLogo .logotexto {
+        height: 50px;
+        width: 100px;
+        margin-top: -2rem; }
+    .containerLateral .subcontainerLateral .containerNavegacao {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: auto; }
+      .containerLateral .subcontainerLateral .containerNavegacao .subcontainerNavegacao {
+        width: 100%; }
+        .containerLateral .subcontainerLateral .containerNavegacao .subcontainerNavegacao .lista .item {
+          width: 100%;
+          padding: 1.5rem;
+          font-size: 1.5rem;
+          text-align: center;
+          cursor: pointer; }
+          .containerLateral .subcontainerLateral .containerNavegacao .subcontainerNavegacao .lista .item:hover {
+            color: rgba(255, 255, 255, 0.5); }
+          .containerLateral .subcontainerLateral .containerNavegacao .subcontainerNavegacao .lista .item:first-child {
+            margin-top: 1px ridge rgba(255, 255, 255, 0.5); }
+    .containerLateral .subcontainerLateral .containerBotao {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem; }
+      .containerLateral .subcontainerLateral .containerBotao button {
+        padding: 1rem;
+        width: 15rem;
+        border: none;
+        border-radius: 2rem;
+        background: #11062d;
+        color: white; }
+        .containerLateral .subcontainerLateral .containerBotao button:hover {
+          transform: scale(1.1);
+          transition: 0.3s; }
+
+.containerMain {
+  width: 75%;
+  font-family: "Montserrat", sans-serif; }
+
+.secaoAtividade {
+  height: 35%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+  .secaoAtividade .topo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem; }
+    .secaoAtividade .topo h1 {
+      font-size: 2.5rem; }
+    .secaoAtividade .topo p {
+      font-size: 1.5rem; }
+  .secaoAtividade .containerDescricao {
+    font-size: 1.1rem;
+    padding: 1rem; }
+    .secaoAtividade .containerDescricao h3 {
+      font-size: 1.3rem; }
+    .secaoAtividade .containerDescricao p {
+      margin-top: 1rem; }
+
+.secaoLista {
+  height: 65%;
+  overflow-y: scroll; }
+  .secaoLista .containerListaTarefas li {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem; }
+    .secaoLista .containerListaTarefas li span {
+      cursor: pointer;
+      margin-left: 0.8rem; }
+    .secaoLista .containerListaTarefas li .data {
+      margin-left: auto; }
+    .secaoLista .containerListaTarefas li img {
+      cursor: pointer;
+      height: 16px;
+      width: 24px;
+      margin-left: right; }
+    .secaoLista .containerListaTarefas li button {
+      margin-left: 0.8rem;
+      background: none;
+      border: none; }
+
+.telaAddAtividade {
+  height: 58%;
+  width: 50%;
+  display: none;
+  position: absolute;
+  top: 13rem;
+  right: 26rem;
+  background-color: #11062D;
+  border-radius: 0.5rem;
+  color: #fff; }
+  .telaAddAtividade .containerTopo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem; }
+    .telaAddAtividade .containerTopo img {
+      cursor: pointer; }
+  .telaAddAtividade .subcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem; }
+    .telaAddAtividade .subcontainer input, .telaAddAtividade .subcontainer select {
+      margin-top: 0.3rem;
+      padding: 0.5rem;
+      border: none; }
+  .telaAddAtividade .subcontainerTres textarea {
+    width: 51rem;
+    height: 7rem;
+    margin-top: 0.3rem;
+    padding: 0.5rem;
+    resize: none; }
+  .telaAddAtividade button {
+    margin: 1rem;
+    margin-top: 0;
+    padding: 1rem;
+    width: 10rem;
+    background-color: fff;
+    font-size: 1.1rem; }

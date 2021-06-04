@@ -10,3 +10,41 @@ $background-apresentacao: linear-gradient(178.17deg, rgba(255, 255, 255, 0.195) 
 
 //Cores principais 
 $branco-transparente: rgba(255, 255, 255, 0.5);
+$branco-transparente-fonte: rgba(255, 255, 255, 0.8);
+$branco-input: rgba(255, 255, 255, 0.5);
+$cor-botao: rgba(17, 6, 45, 1);
+$azul-700: #11062D;
+$azul-600:  #150F3B;
+$azul-500: #161549;
+$azul-400: #1B2258;
+
+
+//Fontes
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../../public/fonts/Roboto/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../../public/fonts/Montserrat/Montserrat-SemiBold.ttf');
+}
+
+
+$roboto: 'Roboto', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
+
+//Mixing display flex - row
+@mixin flex () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//Mixing display flex - Column
+@mixin flexColumn () {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

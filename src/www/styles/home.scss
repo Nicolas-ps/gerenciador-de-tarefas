@@ -1,0 +1,257 @@
+@import 'variaveis.scss';
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: $background-gradiente;
+    overflow: hidden;
+    @include flex();
+}
+
+.containerPrincipal{
+    width: 92%;
+    height: 42rem;
+
+    display: flex;
+    
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+
+    background-color: $background-blur;
+
+}
+
+.containerLateral{
+    width: 30%;
+    height: 100%;
+    border-right: 1px solid $branco-input;
+
+    .subcontainerLateral{
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .containerLogo{
+            @include flexColumn();
+    
+            .logomarca{
+                height: 150px;
+                width: 200px;
+            }
+    
+            .logotexto{
+                height: 50px;
+                width: 100px;
+
+                margin-top: -2rem;
+            }
+        }
+
+
+        .containerNavegacao{
+            @include flexColumn;
+            height: auto;
+
+            .subcontainerNavegacao{
+                width: 100%;
+
+                .lista{
+                    .item{
+
+                        width: 100%;
+                        padding: 1.5rem;
+
+                        font-size: 1.5rem;
+                        text-align: center;
+                        cursor: pointer;
+
+                        &:hover{
+                            color: $branco-input;
+                            
+                        }
+
+                        &:first-child{
+                            margin-top: 1px ridge $branco-input;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .containerBotao{
+
+            @include flex;
+            margin-bottom: 2rem;
+            button{
+                padding: 1rem; 
+                width: 15rem;
+
+                border: none;
+                border-radius: 2rem;
+
+                background: $cor-botao;
+                color: white;
+
+
+                &:hover{
+                    transform: scale(1.1);
+                    transition: 0.3s;
+                }
+
+            }
+        }
+
+    }
+}
+
+.containerMain{
+    width: 75%;
+    font-family: $montserrat;
+}
+
+.secaoAtividade{
+
+    height: 35%;
+    border-bottom: 1px solid $branco-input;
+
+
+    .topo{
+        @include flex();
+        justify-content: space-between;
+        padding: 1rem;
+
+        h1{
+            font-size: 2.5rem;
+        }
+
+        p{
+            font-size: 1.5rem;
+        }
+
+
+    }
+
+    .containerDescricao{
+
+        font-size: 1.1rem;
+        padding: 1rem;
+
+        h3{
+            font-size: 1.3rem;
+        }
+
+        p{
+            margin-top: 1rem;
+        }
+    }
+}
+
+
+.secaoLista{
+
+    height: 65%;
+    overflow-y: scroll;
+
+    .containerListaTarefas{
+        li{
+            
+            display: flex;
+            align-items: center;
+
+            padding: 2rem;
+            border-bottom: 1px solid $branco-input;
+            
+            font-size: 1.1rem;
+
+            span{
+                cursor: pointer;
+                margin-left: 0.8rem;
+            }
+
+            .data{
+                margin-left: auto;
+            }
+
+            img{
+                cursor: pointer;
+                height: 16px;
+                width: 24px;
+                margin-left: right;
+            }
+
+            button{
+                margin-left: 0.8rem;
+                background: none;
+                border: none;
+            }
+
+        }
+    }
+}
+
+.telaAddAtividade{
+    height: 58%;
+    width: 50%;
+
+    display: none;
+
+    position: absolute;
+    top: 13rem;
+    right: 26rem;
+
+    background-color: $azul-700;
+    border-radius: 0.5rem;
+    color: #fff;
+
+    .containerTopo{
+        @include flex();
+        justify-content: space-between;
+        
+        padding: 1rem;
+        
+        img{
+            cursor: pointer;
+        }
+
+    }
+
+    .subcontainer{
+        @include flex();
+        justify-content: space-between;
+
+        padding: 1rem;
+
+
+        input, select  {
+            margin-top: 0.3rem;
+            padding: 0.5rem;
+            border: none;
+        }
+    }
+
+    .subcontainerTres{
+
+        textarea{
+            width: 51rem;   
+            height: 7rem;
+            margin-top: 0.3rem;
+            padding: 0.5rem;
+            resize: none;
+        }  
+
+    }
+    
+    button{
+        margin: 1rem;
+        margin-top: 0;
+        padding: 1rem;
+        width: 10rem; 
+        background-color: fff;
+        font-size: 1.1rem;  
+    }
+
+}
