@@ -39,11 +39,11 @@
                     </div>
             </div>
             <div class="containerFormulario">
-                <form method="POST" >
+                <form method="POST" action="src/app/validandoLogin.php">
 
                     <div class="inputs">         
-                        <input type="email" placeholder="Digite seu email">
-                        <input type="password" placeholder="Digite sua senha">
+                        <input type="email" placeholder="Digite seu email" name="email">
+                        <input type="password" placeholder="Digite sua senha" name="senha">
                         <span><a href="#">Esqueceu sua senha?</a></span>
                     </div>
 
@@ -53,7 +53,6 @@
                             <span>Não tem uma conta? <a href="src/www/pages/cadastro.php">Cadastre-se</a> </span>
                         </div>  
                     </div>
-
 
                 </form>
             </div>
