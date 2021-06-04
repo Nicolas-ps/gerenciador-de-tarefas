@@ -5,7 +5,6 @@
     ini_set('display_errors', 'On'); 
     error_reporting(E_ALL);  
 
-
     //Caminho para o arquivo de texto que servirá com arquivo fonte dos dados.
     define('CAMINHO', '../../login.txt');
 
