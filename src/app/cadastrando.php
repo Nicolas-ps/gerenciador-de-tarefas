@@ -29,10 +29,10 @@
     }
     
     $count = 0;
-    if(!isset($nome)){ $count++; }
-    if(!isset($email)){ $count++; }
-    if(!isset($senha)){ $count++; }
-    if(!isset($senhaConfirmada)){ $count++; }
+    if(empty($nome) != false ){ $count++; }
+    if(empty($email) != false ){ $count++; }
+    if(empty($senha) != false ){ $count++; }
+    if(empty($senhaConfirmada) != false ){ $count++; }
 
     if($count != 0){
         header("Location: ../www/pages/cadastro.php?vazio=true");

@@ -115,7 +115,6 @@ body{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-top: 1rem;
 
                 img{
                     height: 24px;
@@ -185,6 +184,7 @@ body{
                     display: flex;
                     align-items: flex-end;
                     span{
+                        margin-top: .5rem;
                         margin-bottom: 0.5rem;
                     }
                 }

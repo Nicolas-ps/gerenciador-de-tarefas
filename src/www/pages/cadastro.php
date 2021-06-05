@@ -41,6 +41,12 @@
     </div>
     <div class="containerFormulario">
         <form method="post" action="../../app/cadastrando.php">
+     
+            <?php
+                if(filter_input(INPUT_GET, 'vazio') == 'true'){
+                    echo "<p class='erro'><img src='../../../public/iconError.png'>Há um ou mais campos vazios!</p>";
+                }
+            ?>
 
             <div class="inputs">        
                 <input type="text" placeholder="Digite seu nome" name="nome">
