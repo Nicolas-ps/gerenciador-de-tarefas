@@ -111,9 +111,23 @@ body{
 
             @include flexColumn();
 
+            .erro{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 1rem;
+
+                img{
+                    height: 24px;
+                    width: 24px;
+
+                    margin-right: .5rem;
+                }
+
+            }
 
             .inputs{
-                margin-top: 4rem;
+                margin-top: 2rem;
                 margin-bottom: 2rem;
 
                 @include flexColumn();
@@ -132,12 +146,10 @@ body{
 
                     font-size: 1.1rem;
                     
-                    
-                        box-shadow: 0 0 0 0;
-                        border: 0 none;
-                        outline: 0;
-                    
-
+                    box-shadow: 0 0 0 0;
+                    border: 0 none;
+                    outline: 0;
+                
                     &:nth-child(2){
                         margin-bottom: 0.5rem;
                     }
@@ -176,8 +188,6 @@ body{
                         margin-bottom: 0.5rem;
                     }
                 }
-
-
             }
         }
     }

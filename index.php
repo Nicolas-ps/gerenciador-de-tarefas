@@ -30,6 +30,7 @@
         </div>
 
         <div class="containerLogin">
+
             <div class="containerLogo">
                     <div class="logo">
                         <img src="public/img/logo-hora-removebg.png" alt="Logo do Hora!">
@@ -38,8 +39,15 @@
                         <img src="public/img/logo-texto-ssimbol-removebg.png">
                     </div>
             </div>
+
             <div class="containerFormulario">
                 <form method="POST" action="src/app/validandoLogin.php">
+
+                    <?php 
+                        if(filter_input(INPUT_GET, 'login') == 'false'){
+                            echo "<p class='erro'><img src='public/iconError.png'>Email ou senha incorretos!</p>";
+                        }
+                    ?>
 
                     <div class="inputs">         
                         <input type="email" placeholder="Digite seu email" name="email">
