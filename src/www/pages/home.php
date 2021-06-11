@@ -64,6 +64,7 @@
                 
                 <section class="secaoLista">
                     <nav class="containerListaTarefas" id="containerListaTarefas">
+                        
                         <?php foreach($task as $index => $content){ ?>        
                                 <li id="tarefa">
                                     <input type="checkbox">

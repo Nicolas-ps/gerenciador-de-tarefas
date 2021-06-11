@@ -44,6 +44,12 @@
                 <form method="POST" action="src/app/validandoLogin.php">
 
                     <?php 
+                        if(filter_input(INPUT_GET, 'cadastrado') == 'true'){
+                            echo "<p class='erro'><img src='public/checked.png'>Cadastro concluído. Faça login!</p>";
+                        }
+                    ?>
+
+                    <?php 
                         if(filter_input(INPUT_GET, 'login') == 'false'){
                             echo "<p class='erro'><img src='public/iconError.png'>Email ou senha incorretos!</p>";
                         }
