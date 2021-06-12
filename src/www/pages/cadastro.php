@@ -46,6 +46,11 @@
                 if(filter_input(INPUT_GET, 'vazio') == 'true'){
                     echo "<p class='erro'><img src='../../../public/iconError.png'>Há um ou mais campos vazios!</p>";
                 }
+
+                if(filter_input(INPUT_GET, 'emailExistente') == 'true'){
+                    echo "<p class='erro'><img src='../../../public/iconError.png'>Há uma conta cadastrada com esse email!</p>";
+                }
+
             ?>
 
             <div class="inputs">        
