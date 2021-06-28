@@ -1,62 +1,53 @@
 <?php   
 
+    //Chamado pro arquivo cadastrando.php
+    require_once("database/conexaoBD.php");
+
     //Funções que configura o navegador para exibir os erros com status 500.
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     ini_set('display_errors', 'On'); 
     error_reporting(E_ALL);
 
+    //Recebe os valores dos campos de email e senha
     if($_POST){
-
-        global $login;
 
         $email = filter_input(INPUT_POST, 'email');
         $senha = filter_input(INPUT_POST, 'senha');
 
     }
 
-    define('CAMINHO', '../../login.txt');
-    $cadastros = explode("\n\n", file_get_contents(CAMINHO));
-    $usuario = [];
+    //String contendo o código SQL que será injetado no banco de dados
+    $sqlValidaLogin = "SELECT * FROM USUARIO WHERE EMAIL = '$email' AND SENHA = '$senha'";
 
-    foreach($cadastros as $cadastro){
-        array_push($usuario, explode("\n", $cadastro));
-    }  
+    //Função que injeta o SQL no banco e verifica se há retorno
+    function validaLogin ($conexao, $sql){
 
-    $count = 0;
+        mysqli_select_db($conexao, 'usuario');
 
-    $emailConfirmado = false;
-    $senhaConfirmado = false;
-
-    foreach($usuario as $dados){
-
-        foreach($dados as $chave => $dado){
-
-            if($chave == 1){
-
-                if($dado == $email){
-                    $emailConfirmado = true;
-                }else{
-                    $emailConfirmado = false;
-                }
-
-            }
-
-            if($chave == 2){
-
-                if($dado == $senha){
-                    $senhaConfirmado = true;
-                }else{
-                    $senhaConfirmado = false;
-                }
-            }
+        $validaLogin = mysqli_query($conexao, $sql);
+        
+        if(mysqli_fetch_assoc($validaLogin)){
+            return true;
+        }else{
+            return false;
         }
+
     }
 
-    if($senhaConfirmado == true && $emailConfirmado == true){
-        header("Location: ../www/pages/home.php");
+    $count = 0;
+    if(empty($email) != false ){ $count++; }
+    if(empty($senha) != false ){ $count++; }
+
+    if($count == 0){
+        if(validaLogin($conexao, $sqlValidaLogin) == true){
+            header("Location: ../www/pages/home.php");
+        }else{
+            header("Location: ../../index.php?login=false");
+        }  
     }else{
-        header("Location: ../../index.php?login=false");
-    }   
+        header("Location: ../../index.php?vazio=true");
+    }
+ 
 
 ?>

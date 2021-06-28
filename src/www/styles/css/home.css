@@ -167,3 +167,26 @@ body {
     width: 10rem;
     background-color: fff;
     font-size: 1.1rem; }
+
+.dropSaida {
+  width: 22rem;
+  height: 10rem;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20rem;
+  left: 45rem;
+  background-color: #11062D;
+  color: white;
+  font-size: larger;
+  border-radius: 0.5rem; }
+  .dropSaida .buttons {
+    margin-top: 1rem; }
+    .dropSaida .buttons button {
+      margin-top: 0;
+      padding: 0.3rem;
+      width: 10rem;
+      background-color: fff;
+      font-size: 1.1rem; }

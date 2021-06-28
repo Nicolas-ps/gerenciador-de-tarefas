@@ -49,6 +49,6 @@
         fwrite($arquivoAberto, implode("\n", $tasks));
         fclose($arquivoAberto);
         header("location: ../pages/home.php");
-    }
+    } 
  
 ?>

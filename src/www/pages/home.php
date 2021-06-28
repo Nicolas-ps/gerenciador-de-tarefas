@@ -36,12 +36,10 @@
                             </ul>
                         </nav>
                     </div>
-
                     
                     <div class="containerBotao">
-                            <button>Sair</button>
+                        <button id="botaoSair">Sair</button>
                     </div>
-
 
                 </div>
             </aside>
@@ -139,8 +137,18 @@
                 </div>
                 
             </div>
+
+            <div class="dropSaida" id="dropSaida">
+                <span>Você realmente deseja sair?</span>
+                <div class="buttons">
+                    <button type="button" id="botaoCancelar">Cancelar</button>
+                    <a href="../../../index.php"><button type="button" id="botaoSair">Sair</button></a>
+                </div>
+            </div>
+
         </div>
         <script type="text/javascript" src="../../scripts/controleTelaAdd.js"></script>
         <script type="text/javascript" src="../../scripts/exibirConteudoTopo.js"></script>
+        <script type="text/javascript" src="../../scripts/controleTelaSaida.js"></script>
     </body>
 </html>

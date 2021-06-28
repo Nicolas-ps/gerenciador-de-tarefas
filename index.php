@@ -1,3 +1,15 @@
+<?php
+
+    //Funções que configura o navegador para exibir os erros com status 500.
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    ini_set('display_errors', 'On'); 
+    error_reporting(E_ALL);  
+
+    //require_once("src/app/database/criandoBD.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -44,12 +56,15 @@
                 <form method="POST" action="src/app/validandoLogin.php">
 
                     <?php 
+
+                        if(filter_input(INPUT_GET, 'vazio') == 'true'){
+                            echo "<p class='erro'><img src='public/iconError.png'>Há campos vazios</p>";
+                        }
+
                         if(filter_input(INPUT_GET, 'cadastrado') == 'true'){
                             echo "<p class='erro'><img src='public/checked.png'>Cadastro concluído. Faça login!</p>";
                         }
-                    ?>
-
-                    <?php 
+                   
                         if(filter_input(INPUT_GET, 'login') == 'false'){
                             echo "<p class='erro'><img src='public/iconError.png'>Email ou senha incorretos!</p>";
                         }
