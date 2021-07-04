@@ -1,5 +1,4 @@
 <?php  
-
     require_once("database/conexaoBD.php");
 
     //Funções que configura o navegador para exibir os erros com status 500.
@@ -14,9 +13,16 @@
         $emailCadastro = filter_input(INPUT_POST, 'email');
         $senha = filter_input(INPUT_POST, 'senha');
         $senhaVerif = filter_input(INPUT_POST, 'senhaConfirmada');
+
+        $count = 0;
+        if(empty($nome) != false ){ $count++; }
+        if(empty($emailCadastro) != false ){ $count++; }
+        if(empty($senha) != false ){ $count++; }
+        if(empty($senhaVerif) != false ){ $count++; }
+
     }
 
-    $sqlDadosUsuario = "INSERT INTO USUARIO (NOME, EMAIL, SENHA) VALUES ('$nome', '$emailCadastro', '$senha');"; 
+    $sqlDadosUsuario = "INSERT INTO USUARIO (NOME, EMAIL, SENHA) VALUES ('$nome', '$emailCadastro', '$senha')"; 
 
     //Função que insere os dados na tabela
     function insereDados (bool $confirmacao, $conexao,  $sql) {
@@ -52,19 +58,11 @@
         }else{
             return false;
         }
-
     }
-
-
-    $count = 0;
-    if(empty($nome) != false ){ $count++; }
-    if(empty($emailCadastro) != false ){ $count++; }
-    if(empty($senha) != false ){ $count++; }
-    if(empty($senhaVerif) != false ){ $count++; }
-
 
     if($count != 0){
         header("Location: ../www/pages/cadastro.php?vazio=true");
+    
     }else{
 
         $emailExistente = verificaEmail($conexao, $sqlVerificaEmail, $emailCadastro);
@@ -80,6 +78,8 @@
         }else{
             header("Location: ../www/pages/cadastro.php?emailExistente=true");   
         }
-
     }    
+
+
+
 ?>

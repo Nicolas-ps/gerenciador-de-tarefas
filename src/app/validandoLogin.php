@@ -1,15 +1,14 @@
 <?php   
+    session_start();
 
-    //Chamado pro arquivo cadastrando.php
+    //Chamado pro arquivo
+    require_once("errosServ.php");
     require_once("database/conexaoBD.php");
-
-    //Funções que configura o navegador para exibir os erros com status 500.
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    ini_set('display_errors', 'On'); 
-    error_reporting(E_ALL);
+    require_once("database/consultaBD.php");
 
     //Recebe os valores dos campos de email e senha
+    global $email;
+    
     if($_POST){
 
         $email = filter_input(INPUT_POST, 'email');
@@ -32,7 +31,6 @@
         }else{
             return false;
         }
-
     }
 
     $count = 0;
@@ -41,13 +39,20 @@
 
     if($count == 0){
         if(validaLogin($conexao, $sqlValidaLogin) == true){
+
+            $_SESSION['login'] = $email;
+            $_SESSION['senha'] = $senha;
+
+            $sql = "SELECT ID FROM USUARIO WHERE EMAIL = '$email'";
+            $Id_Usuario = consulta($conexao, $sql);
+            $_SESSION['idUsuario'] = $Id_Usuario["ID"];
+
             header("Location: ../www/pages/home.php");
+
         }else{
             header("Location: ../../index.php?login=false");
         }  
     }else{
         header("Location: ../../index.php?vazio=true");
     }
- 
-
 ?>

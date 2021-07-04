@@ -1,7 +1,9 @@
 <?php   
     error_reporting(E_ALL);  
     ini_set('display_errors', 'On'); 
-    include '../../app/app.php';
+    require_once("../../app/recuperandoTarefas.php");   
+    require_once("../../app/deletandoTarefas.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -62,16 +64,26 @@
                 
                 <section class="secaoLista">
                     <nav class="containerListaTarefas" id="containerListaTarefas">
-                        
-                        <?php foreach($task as $index => $content){ ?>        
+
+                        <?php if(empty($tarefas)){?>
+
+                                <li id="tarefa" style="justify-content: center;">Não há tarefas em sua lista!</li>
+
+                        <?php }else{ foreach($tarefas as $index => $tarefa){ ?>
+            
                                 <li id="tarefa">
-                                    <input type="checkbox">
-                                    <span><?= $content[0]?></span>
-                                    <span class="data">Data de entrega: <?= $content[3]?></span>
-                                    <a href="home.php?index=<?=$index?>"><button><img src="../../../public/iconExcluir-removebg-preview.png" height="16px" width="24px"></button></a>                               
+                                        <input type="checkbox">
+                                        <span><?= $tarefa["TITULO"]?></span>
+                                        <span class="data">Data de entrega: <?= $tarefa["DATA_ENTREGA"]?></span>
+                                        <a href="home.php?index=<?=$tarefa["ID"]?>">
+                                            <button>
+                                                <img src="../../../public/iconExcluir-removebg-preview.png" height="16px" width="24px">
+                                            </button>
+                                        </a>                               
                                 </li>
-                        <?php }?>
-                        
+
+                        <?php }}?>
+            
                     </nav>
                 </section>
 
@@ -85,7 +97,7 @@
                         <img src="../../../public/icon-close-removebg-preview.png" alt="Botão de fechar" height="16px" width="32px" id="botao">
                     </div>
 
-                    <form class="form" method="post" action="home.php">
+                    <form class="form" method="POST" action="../../app/cadastrandoTarefas.php">
 
                         <div class="subcontainerUm subcontainer">
                             <label for="titulo">
